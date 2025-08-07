@@ -16,7 +16,7 @@ export class AuthService {
         const hashedPassword = await bcrypt.hash(createUserDTO.password, 10);
         createUserDTO.password = hashedPassword; 
      
-        const user = await this.usersService.createUser(createUserDTO);
+        const user = await this.usersService.createUser(createUserDTO);// Create user using UsersService
         return this.jwtService.sign({id: user.id, email: user.email}); // Generate JWT token after user creation
     }
 
@@ -26,6 +26,6 @@ export class AuthService {
        if (!user || !(await bcrypt.compare(loginDTO.password, user.password))) {
            throw new UnauthorizedException('Invalid credentials');
        }
-       return this.jwtService.sign({id: user.id, email: user.email});
+       return this.jwtService.sign({id: user.id, email: user.email});// Generate JWT token after user login
     }
 }

@@ -1,5 +1,5 @@
 ### Register API
-POST http://localhost:3000/auth/register
+POST http://localhost:3001/auth/register
 Content-Type: application/json
 
 {
@@ -10,10 +10,14 @@ Content-Type: application/json
 }
 
 ### Login API
-POST http://localhost:3000/auth/login
+POST http://localhost:3001/auth/login
 Content-Type: application/json  
 
 {
   "email": "user@example.com",
   "password": "password123"
 }
+
+### Get User Profile API
+GET http://localhost:3001/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzU0NTczNzI2LCJleHAiOjE3NTQ1NzczMjZ9.hD2NJJjfK-FBozEGXLUToQX5Dqy_DnwZ6vw4vjN904E
