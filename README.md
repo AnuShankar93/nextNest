@@ -14,6 +14,10 @@ cd backend
 npm install
 npm run start:dev
 ```
+### To run Postgres DB locally please install docker and run the following command
+```sh
+ "start-db": "docker-compose up -d"
+ ```
 
 ### Frontend
 
